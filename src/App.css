@@ -1,38 +1,126 @@
-.App {
+/* ====================
+   Global Base Styles
+==================== */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: #83345d;
+  color: #1c1e21;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* ====================
+   Country Box Styles
+==================== */
+.country-box {
+  background-color: #7b8c9c;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  border-radius: 16px;
+  padding: 3rem;
+  margin: 7rem auto;
+  max-width: 800px;
+  transition: box-shadow 0.3s ease;
+}
+
+.country-box:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+
+/* ====================
+   Search Input
+==================== */
+.search-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 2px solid #324b49;
+  border-radius: 12px;
+  outline: none;
+  background-color: #491818;
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.search-input:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(80, 82, 196, 0.3);
+}
+
+
+/* ====================
+   Suggestions Dropdown
+==================== */
+.suggestions-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #92323b;
+  border: 1px solid #15af96;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 10;
+  margin-top: 4px;
+  list-style: none;
+  padding: 0;
+}
+
+.suggestions-list li {
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.suggestions-list li:hover {
+  background-color: #c072cf;
+}
+
+
+/* ====================
+   Error Message
+==================== */
+.error-message {
+  color: #99297f;
+  background-color: #5d0e38;
+  border: 1px solid #560e84;
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 1rem auto;
+  width: 90%;
+  max-width: 600px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+/* ====================
+   Flag Styles
+==================== */
+.flag-img {
+  width: 10rem;
+  height: auto;
+  margin-bottom: 1rem;
+  border-radius: 0.25rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+
+/* ====================
+   Responsive Layout
+==================== */
+@media (max-width: 768px) {
+  .country-box {
+    padding: 2rem;
+    margin: 2rem auto;
+    background-color: #640c43; /* A calmer blue tone for smaller screens */
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+  .search-input {
+    font-size: 0.95rem;
   }
 }
